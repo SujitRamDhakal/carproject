@@ -1,3 +1,12 @@
 from django.db import models
 
 # Create your models here.
+
+
+class Cars(models.Model):
+    carname = models.CharField(max_length=50, default='abc')
+    cardesc = models.CharField(max_length=1000, default='abc')
+    carimage = models.ImageField(upload_to='media/images')
+
+    def __str__(self) -> str:
+        return self.carname

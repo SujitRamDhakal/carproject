@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/static/main/style.css" />
   </head>
   <body>
-    <!--Add Car-->
     <div class="container">
       <div class="form">
         <h1>Add Cars</h1>
@@ -23,28 +22,6 @@
           <button>Add Car</button><br />
         </form>
       </div>
-      <div class="form">
-        <!-- search car -->
-        <form>
-          <input type="text" name="search_car" /><br />
-          <br />
-          <button>Search</button>
-        </form>
-      </div>
-      <table>
-        <tr>
-          <th>Car Name</th>
-          <th>Car Description</th>
-          <th>Car Image</th>
-        </tr>
-        {%for x in cars%}
-        <tr>
-          <td>{{x.carname}}</td>
-          <td>{{x.cardesc}}</td>
-          <td>{{x.carimage}}</td>
-        </tr>
-        {%endfor%}
-      </table>
     </div>
   </body>
 </html>
