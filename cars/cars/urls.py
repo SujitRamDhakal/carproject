@@ -25,6 +25,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', login_page, name='login_page'),
+    path('register/', register_page, name='register_page'),
+    path('main/', main_page, name='main_page'),
 ]
 
 if settings.DEBUG:
