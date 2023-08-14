@@ -28,6 +28,8 @@ urlpatterns = [
     path('login/', login_page, name='login_page'),
     path('register/', register_page, name='register_page'),
     path('main/', main_page, name='main_page'),
+    path('modify/<id>/', modify_page, name='modify_page'),
+    path('delete/<id>', delete_car, name="delete_car"),
 ]
 
 if settings.DEBUG:

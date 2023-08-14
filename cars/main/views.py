@@ -20,3 +20,28 @@ def main_page(request):
             carname__icontains=request.GET.get('search_car'))
     context = {'cars': cars}
     return render(request, 'main/index.html', context)
+
+
+def modify_page(request, id):
+    carid = Cars.objects.get(id=id)
+    context = {'car': carid}
+    if request.method == 'POST':
+        car_name = request.POST.get('carname')
+        car_desc = request.POST.get('car_desc')
+        car_image = request.FILES.get('image')
+
+        carid.carname = car_name
+        carid.cardesc = car_desc
+        carid.carimage = car_image
+
+        carid.save()
+
+        return redirect('/main/')
+
+    return render(request, 'main/modify.html', context)
+
+
+def delete_car(request, id):
+    car = Cars.objects.get(id=id)
+    car.delete()
+    return redirect('/main/')

@@ -9,17 +9,17 @@
   <body>
     <div class="container">
       <div class="form">
-        <h1>Add Cars</h1>
+        <h1>Update Car</h1>
         <hr />
         <form action="" method="post" enctype="multipart/form-data">
           {% csrf_token %}
           <label for="carname">Car Name</label><br />
-          <input type="text" name="carname" /><br />
+          <input type="text" name="carname" value="{{car.carname}}" /><br />
           <label for="car_desc">Car Description</label><br />
-          <textarea name="car_desc"></textarea><br />
+          <textarea name="car_desc">{{car.cardesc}}</textarea><br />
           <label for="image">Image</label><br />
           <input type="file" name="image" alt="image" /><br /><br />
-          <button>Add Car</button><br />
+          <button>Update Car</button><br />
         </form>
       </div>
     </div>
